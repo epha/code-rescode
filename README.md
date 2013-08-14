@@ -12,12 +12,18 @@ Example
 
 	function( res, req ) 
 	{
-		codes.create("ean13","4719512002889");
+		var data = codes.create("ean13","4719512002889");
+        
+        res.setHeader("Content-Type","image/png");
 		res.end( data );
+        
+        OR
+        
+        res.end("<html><img src='data:image/png;base64,"+data.toString("base64")+"' /></html>");
 	}
 
 Configure
 ---------
-	Choose in lib/codes.js the Adatper PNG ( binary png ) or Canvas ( dataURL )
-	Choose in lib/bwipp/index.js the Code Generator and Defaults
+	Choose in lib/codes.js the Adatper PNG ( binary png ) or Canvas ( dataURL (smaller size), but canvas has to be installed )
+	Choose in lib/bwipp/index.js the Code Generators and Defaults
 	
