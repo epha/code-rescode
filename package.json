@@ -1,7 +1,7 @@
 {
   "name": "rescode",
   "description": "Generate Codes (EAN13, QRCODE ..)",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "author": {
     "name": "Marco Egbring",
     "email": "marco.egbring@epha.ch"
@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/epha/rescodes"
+    "url": "git://github.com/epha/rescode"
   },
   "main": "index",
   "bin": {
