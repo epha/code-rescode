@@ -21,6 +21,24 @@ Example
         
         res.end("<html><img src='data:image/png;base64,"+data.toString("base64")+"' /></html>");
 	}
+	
+Example loading specific barcode types
+---------------------------------------
+	var codes = require("rescode");
+
+	function( res, req ) 
+	{
+		codes.loadModules(["ean13", "ean8"]);
+		
+		var data8 = codes.create("ean8","12345678");
+        
+        res.setHeader("Content-Type","image/png");
+		res.end( data8 );
+        
+        OR
+        
+        res.end("<html><img src='data:image/png;base64,"+data8.toString("base64")+"' /></html>");
+	}	
 
 Configure
 ---------
