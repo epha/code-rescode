@@ -45,10 +45,10 @@ Example loading ean barcode types and setting specific options
 		
 Example loading qrcode
 ----------------------------------------------------------------------------
- [ Level L ] - 7% of codewords can be restored
- [ Level M ] - 15% of codewords can be restored
- [ Level Q ] - 25% of codewords can be restored
- [ Level H ] - 30% of codewords can be restored
+ * Level L  - 7% of codewords can be restored
+ * Level M  - 15% of codewords can be restored
+ * Level Q  - 25% of codewords can be restored
+ * Level H  - 30% of codewords can be restored
  
 	var codes = require("rescode");
 
