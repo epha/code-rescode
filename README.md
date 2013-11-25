@@ -4,23 +4,7 @@ Notice that I am not the author of the code, I am just the creator of an npm mod
 
 Install
 ---------
-	npm install rescode
-	
-Example
---------
-	var codes = require("rescode");
-
-	function( res, req ) 
-	{
-		var data = codes.create("ean13","4719512002889");
-        
-        res.setHeader("Content-Type","image/png");
-		res.end( data );
-        
-        OR
-        
-        res.end("<html><img src='data:image/png;base64,"+data.toString("base64")+"' /></html>");
-	}
+	npm install rescode	
 	
 Example loading specific barcode types
 ---------------------------------------
@@ -28,7 +12,7 @@ Example loading specific barcode types
 
 	function( res, req ) 
 	{
-		codes.loadModules(["ean13", "ean8"]);
+		codes.loadModules(["ean13", "ean8", "ean5", "ean2"]);
 		
 		var data8 = codes.create("ean8","12345678");
         
@@ -40,15 +24,15 @@ Example loading specific barcode types
         res.end("<html><img src='data:image/png;base64,"+data8.toString("base64")+"' /></html>");
 	}	
 	
-Example loading specific barcode types and setting specific options
+Example loading ean barcode types and setting specific options
 --------------------------------------------------------------------
 	var codes = require("rescode");
 
 	function( res, req ) 
 	{
-		codes.loadModules(["ean13"], { "includetext":false, "guardwhitespace":false, "inkspread":0, scaleX:2, textyoffset:-15 });
-		codes.loadModules(["ean8"], { "includetext":false, "guardwhitespace":false, "inkspread":0, scaleX:3, textyoffset:-15 });
-		
+		codes.loadModules(["ean13", "ean5", "ean2"]);		
+        codes.loadModules(["ean8"], { "includetext":false, "guardwhitespace":false, "inkspread":0, scaleX:3, textyoffset:-15 });
+		        
 		var data8 = codes.create("ean8","12345678");
         
         res.setHeader("Content-Type","image/png");
@@ -59,8 +43,28 @@ Example loading specific barcode types and setting specific options
         res.end("<html><img src='data:image/png;base64,"+data8.toString("base64")+"' /></html>");
 	}	
 		
-	
-	rescode.loadModules(["ean13", "ean8"], { "includetext":false, "guardwhitespace":false, "inkspread":0, scaleX:2, textyoffset:-15 });
+Example loading qrcode
+----------------------------------------------------------------------------
+ Level L - 7% of codewords can be restored
+ Level M - 15% of codewords can be restored
+ Level Q - 25% of codewords can be restored
+ Level H - 30% of codewords can be restored
+ 
+	var codes = require("rescode");
+
+	function( res, req ) 
+	{
+      codes.loadModules("qrcode", { "eclevel":"M"} );  
+      
+      var data = codes.create("qrcode","http://npmjs.org");
+        
+      res.setHeader("Content-Type","image/png");
+      res.end( data );
+      
+      OR
+      
+      res.end("<html><img src='data:image/png;base64,"+data.toString("base64")+"' /></html>");
+	}
 
 
 Configure
