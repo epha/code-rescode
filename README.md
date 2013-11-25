@@ -70,6 +70,10 @@ Example loading qrcode
 
 Configure
 ---------
-	Choose in lib/codes.js the Adatper PNG ( binary png ) or Canvas ( dataURL (smaller size), but canvas has to be installed )
+    Choose in lib/codes.js the Adatper PNG ( binary png ) or Canvas ( dataURL (smaller size), but canvas has to be installed )
 
 	
+Thanks
+---------
+    To Jens Olsson for dynamic loading of the libraries
+  
