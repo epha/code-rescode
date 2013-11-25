@@ -12,7 +12,8 @@ Example loading specific barcode types
 
 	function( res, req ) 
 	{
-		codes.loadModules(["ean13", "ean8", "ean5", "ean2"]);
+        // Sequence is important
+		codes.loadModules(["ean2", "ean5", "ean8", "ean13"]);
 		
 		var data8 = codes.create("ean8","12345678");
         
@@ -30,9 +31,10 @@ Example loading ean barcode types and setting specific options
 
 	function( res, req ) 
 	{
-		codes.loadModules(["ean13", "ean5", "ean2"]);		
+		codes.loadModules(["ean2", "ean5"]);		
         codes.loadModules(["ean8"], { "includetext":false, "guardwhitespace":false, "inkspread":0, scaleX:3, textyoffset:-15 });
-		        
+		codes.loadModules(["ean13"]);
+        
 		var data8 = codes.create("ean8","12345678");
         
         res.setHeader("Content-Type","image/png");
@@ -54,8 +56,8 @@ Example loading qrcode
       // Level M  - 15% of codewords can be restored
       // Level Q  - 25% of codewords can be restored
       // Level H  - 30% of codewords can be restored
-      
-      codes.loadModules("qrcode", { "eclevel":"M"} );  
+      // IMPORTANT white padding around qrcode 
+      codes.loadModules("qrcode", { "eclevel":"M" , version: "4", scaleX: 2, scaleY: 2} );  
       
       var data = codes.create("qrcode","http://npmjs.org");
         
@@ -70,10 +72,10 @@ Example loading qrcode
 
 Configure
 ---------
-    Choose in lib/codes.js the Adatper PNG ( binary png ) or Canvas ( dataURL (smaller size), but canvas has to be installed )
+Choose in lib/codes.js the Adatper PNG ( binary png ) or Canvas ( dataURL (smaller size), but canvas has to be installed )
 
 	
 Thanks
 ---------
-    To Jens Olsson for dynamic loading of the libraries
+To Jens Olsson for dynamic loading of the libraries
   
