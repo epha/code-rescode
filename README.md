@@ -45,10 +45,10 @@ Example loading ean barcode types and setting specific options
 		
 Example loading qrcode
 ----------------------------------------------------------------------------
- Level L - 7% of codewords can be restored
- Level M - 15% of codewords can be restored
- Level Q - 25% of codewords can be restored
- Level H - 30% of codewords can be restored
+ [ Level L ] - 7% of codewords can be restored
+ [ Level M ] - 15% of codewords can be restored
+ [ Level Q ] - 25% of codewords can be restored
+ [ Level H ] - 30% of codewords can be restored
  
 	var codes = require("rescode");
 
@@ -70,5 +70,5 @@ Example loading qrcode
 Configure
 ---------
 	Choose in lib/codes.js the Adatper PNG ( binary png ) or Canvas ( dataURL (smaller size), but canvas has to be installed )
-	Choose in lib/bwipp/index.js the Code Generators and Defaults
+
 	
