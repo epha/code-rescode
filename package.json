@@ -6,22 +6,30 @@
     "name": "Marco Egbring",
     "email": "marco.egbring@epha.ch"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "keywords": [
-    "codes","ean13","qrcode"
+    "codes",
+    "ean13",
+    "qrcode"
   ],
   "repository": {
     "type": "git",
     "url": "git://github.com/epha/rescode"
   },
   "main": "index",
-  "bin": {
-  },
+  "bin": {},
   "scripts": {
     "prepublish": "npm prune"
   },
   "engines": {
     "node": "*"
+  },
+  "devDependencies": {
+    "assert": "~1.1.2",
+    "mocha": "~2.0.1",
+    "gulp": "~3.8.9",
+    "gulp-jshint": "~1.8.6",
+    "gulp-mocha": "~1.1.1",
+    "jshint-stylish": "~1.0.0"
   }
 }
