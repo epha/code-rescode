@@ -213,3 +213,18 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+
+
+#################
+## Web Storm
+#################
+
+.idea/
+
+
+#################
+## Node
+#################
+
+node_modules/
