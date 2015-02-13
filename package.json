@@ -1,7 +1,7 @@
 {
   "name": "rescode",
   "description": "Generate Codes (EAN13, QRCODE ..)",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "author": {
     "name": "Marco Egbring",
     "email": "marco.egbring@epha.ch"
